@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php 
-        echo "<hr><br>";
+        
         echo "<h3>Sık Kullanılan string Fonksiyonlar</h3>";
         $yazi = "Aydın Adnan Menderes Üniversitesi";
         echo "\$yazi değişken içeriği: $yazi";
@@ -36,7 +36,8 @@
         echo "<hr><br>";
         echo "<h3>0-255 arasındaki değerleri chr foknsiyonuna sokarak satır olarak yazdırması</h3>";
         
-            for ($i=33; $i < 126; $i++) { 
+            for ($i=33; $i < 127; $i++) { 
+
                 echo "<br>0-255 arasındaki değerler:". chr($i)."<br>";
             }
             echo "<hr><br>";
@@ -52,8 +53,8 @@
         echo "<br>\$metin değişkinindeki harf sayısı:" . strlen($metin);
         echo "<br>";
         echo "<br>\$metin değşikenindeki kelime sayısı:";
-        $kelim =explode(" ",$metin);    
-            echo    count($kelim);    
+        $kelime =explode(" ",$metin);    
+            echo    count($kelime);    
         echo "<br>";
         echo "<br>\$metin değikenindeki cümle sayısı:";
         $cumle =explode(".",$metin);
