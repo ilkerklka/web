@@ -20,7 +20,12 @@
 
     $isimler2= array();
     $isimler2["isim1"]="mahmut";
-    $isimler["isim2"]="mustafa";
+    $isimler2["isim2"]="mustafa";
+    $isimler2["isim3"]="burcu";
+    $isimler2[]= "hüseyin";
+    $isimler2[]= "gülcan";
+
+
 
     echo "<pre>";
     print_r($isimler2);
@@ -37,10 +42,51 @@
             "ders2"   => "web programlama",
             "ders3"   => "mobil programlama",
         ),
+        "sinif" => "2"
     );
+    echo "<br><hr> <h3>uygulama : öğrenci setayı dizisini alt alta döngüleri kullanarak yazdırınız</h3>";
 
-    echo "<br><hr>";
-        echo "<h3> koşul ifadeleri </h3>";
+    echo "<pre>";
+    print_r($ogrencidetay);
+    echo "</pre>";
+
+    echo "öğrencilerin dersleri: <br>";
+
+    echo $ogrencidetay["dersler"]["ders1"] . "<br>";
+    echo $ogrencidetay["dersler"]["ders2"] . "<br>";
+    echo $ogrencidetay["dersler"]["ders3"] . "<br>";
+
+    echo "<br><hr> <h3>uygulama : öğrenci detayları dizisindeki her öğrencinin detaylarını alt alta yazdırınız </h3>";
+
+    $ogrenciDetaylari = array(
+        "ogrenci1" => array(
+            "id"        => 1,
+            "adi"       => "Nurullah",
+            "soyadi"    => "Yıldız",
+            "bolum"     => "Bilgisayar",
+            "yas"       => "25",
+            "dersler"   => array(
+                "ders1" => "Veri Tabanı",
+                "ders2" => "Web Programlama",
+                "ders3" => "Mobil Programlama"
+            ),
+            "sinif"     => "2"
+        ),
+        "ogrenci2" => array(
+            "id"        => 1,
+            "adi"       => "Ayşen",
+            "soyadi"    => "Güler",
+            "bolum"     => "Makine",
+            "yas"       => "22",
+            "dersler"   => array(
+                "ders1" => "Matematik",
+                "ders2" => "Sayı Teorileri",
+                "ders3" => "Model Geliştirme"
+            ),
+            "sinif"     => "4"
+        )
+        );
+    
 
 
     
@@ -48,62 +94,135 @@
     
     ?>
 
-echo "<br><hr>";
-        echo "<h2> koşul ifadeleri </h2>";
-        <p>İf-else bloklarında öncelikle koşul belirtidil ve sonraki dallanma koşula göre devam eder.</p>
-        <h4>karşılaştırma operatörleri</h4>
-        <ol>
-            <li>== ($a==$b) Eşit ise demek. (genellikle matematiksel bir karşılaştırma yapılır)</li>
-            <li>=== ($a===$b) denk ise. (genellikle string bir karşılaştırma yapılır.)</li>
-            <li>!= ($a!=$b) eşit değil ise. ()genellikle matematiksel bir karşılaştırma yapılır</li>
-            <li>!== ($a!==$b) denk değil ise. (genellikle string bir karşılaştırma yapılır)</li>
-            <li>> ($a>$b) büyük ise. ()</li>
-            <li>>=($a >= $b)büyük veya eşit ise</li>
-            <li>< ($a<$b)küçük ise</li>
-            <li><= ($a <= $b)küçük veya eşit ise</li>
-
-        </ol>
-        <h4>mantıksal sınama operatörleri</h4>
-        <ol>
-            <li>! (olmsuzsa) (!$a)--> $a nın değeri false ise true döner. Aksini yapar olumsuzmu diye sorar</li>
-            <li>&& (ve) ($a&&$b) --> $a nın değeri olumluysa true döner. iki koşulda sağlanmak zorundaadır. kouşşulardan bir tanesi false dönerse genel değer false olur.</li>
-            <li>|| (veya) ($a||$b) -->$a nın veya dolar $b nin herhangi birisinin değeri olumlu ise sonuç true olarak döner.  herhangi birisinin koşulu sağlaması genel dönüşü true yapar.</li>
-        </ol>
-
-        <h3>Not:</h3>
-        <ol>
-            <li>elseif sürekli tekrar eden sorgu bloğu açar</li>
-            <li>else son kapanış koşuludur. (herhangi bir şart belirtmez hiçbir koşul gerçekleşmediğinde çalışacak son koşulu ifade eder)</li>
+<hr>
+    <h3>Koşul İfadeleri (If-Else)</h3>
+    <p>İf-Else Bloklarında öncelikle koşul belirtilir ve sonraki dallanma koşula göre devam eder.</p>
 
 
-            <?php
-            
-            // if (condition) {
-            //     # code...
-            // }elseif (condition) {
-            //     # code...
-            // }elseif (condition) {
-            //     # code...
-            // }elseif (condition) {
-            //     # code...
-            // }else {
-            //     # code...
-            // }
+    <h5>Karşılaştırma Operatörleri</h5>
+    <ol>
+        <li> == ($a == $b) Eşit ise. (Genellikle Matematiksel bir karşılaştırma yapılır.)</li>
+        <li> === ($a === $b) Denk ise. (Genellikle String bir karşılaştırma yapılır.)</li>
+        <li> != ($a != $b) Eşit değil ise. (Genellikle Matematiksel bir karşılaştırma yapılır.)</li>
+        <li> !== ($a !== $b) Denk değil ise. (Genellikle String bir karşılaştırma yapılır.)</li>
+        <li> > ($a > $b) Büyük ise.</li>
+        <li> >= ($a >= $b) Büyük veya eşit ise.</li>
+        <li>
+            < ($a < $b) Küçük ise.</li>
+        <li>
+            <= ($a <=$b) Küçük veya eşit ise.</li>
+
+    </ol>
+
+    <h5>Mantıksal Operatörler</h5>
+    <ol>
+        <li> ! (olumsuzsa) (!$a) --> $a'nın değeri False ise True döner. Aksini yapar olumsuz mu diye sorar. </li>
+        <li> && - AND (ve) ($a && $b ) --> $a ve $b'nin değeri olumlu ise True döner, iki koşul da sağlanmak zorundadır. Koşullardan bir tanesi false dönerse genel değer False olur. </li>
+        <li> || - OR (veya) ($a || $b) --> $a'nın veya $b'nin herhangi birisinin değeri olumlu ise sonuç True olarak döner. Herhangi birisinin koşulu sağlaması genel dönüşü True yapar. </li>
+    </ol>
+
+    <h4>Not:</h4>
+
+    <ol>
+        <li>Elseif sürekli tekrar eden sorgu bloğu açar.</li>
+        <li>Else son kapanış koşuludur. (Herhangi bir şart belirtilmez. Hiçbir önkoşul gerçekleşmediğinde çalışacak son koşulu ifade eder.)</li>
+    </ol>
+
+    <?php
+
+    /*     if (condition) {
+        # code...
+    }elseif (condition) {
+        # code...
+    }elseif (condition) {
+        # code...
+    }elseif (condition) {
+        # code...
+    }else {
+        # code...
+    } */
 
 
-            $sayi = 123;
+    $sayi1 = 123;
+    $sayi2 = 345;
+    $metin = "Adü";
 
-            $sayi2 = 366;
+    /* Değer Varsa */
+    if ($sayi1) {
+        echo "<br>If bloğu çalıştı : $sayi1";
+    } else {
+        echo "<br>Else bloğu çalıştı : $sayi1";
+    }
 
-            $metin="adü";
+    /* Değer Yoksa */
+    if (!$sayi1) {
+        echo "<br>If bloğu çalıştı : $sayi1";
+    } else {
+        echo "<br>Else bloğu çalıştı";
+    }
 
-            if ($sayi1) {
-                echo "if bloğu çalıştı : $sayi1";
-            }
-            
-            
-            ?>
+    /* eşitlik Varsa */
+    if ($sayi1 == $sayi2) {
+        echo "<br>Sayılar Eşit: $sayi1 = $sayi2";
+    } else {
+        echo "<br>Sayılar Eşit Değil: $sayi1 != $sayi2";
+    }
 
-        </ol>
+    /* eşitlik Yoksa Varsa */
+    if ($sayi1 != $sayi2) {
+        echo "<br>Sayılar Eşit Değil: $sayi1 != $sayi2";
+    } else {
+        echo "<br>Sayılar Eşit: $sayi1 = $sayi2";
+    }
+
+    /* Denklik Varsa */
+    if ("ogrenci" === "ogrenci") {
+        echo "<br>Girilen değerler aynı";
+    } else {
+        echo "<br>Girilen değerler aynı değil.";
+    }
+
+    /* Denklik Varsa */
+    if ($metin === "Adü") {
+        echo "<br>Girilen değerler aynı : $metin";
+    } else {
+        echo "<br>Girilen değerler aynı değil.";
+    }
+
+    /* And Örneği */
+    if (($sayi1 < $sayi2) and ("ogrenci" === "ogrenci")) {
+        echo "<br>Koşullar Sağlandı";
+    } else {
+        echo "<br>Koşullar sağlanmadı.";
+    }
+
+    /* OR Örneği */
+    if (($sayi1 < $sayi2) or (15 > 25)) {
+        echo "<br>Koşullar Sağlandı";
+    } else {
+        echo "<br>Koşullar sağlanmadı.";
+    }
+
+
+    if ($sayi1 > $sayi2) {
+        echo "<br> \$sayi1 Değişkeni \$sayi2 değişkeninden büyüktür. $sayi1>$sayi2";
+    } else {
+        echo "<br> \$sayi1 Değişkeni \$sayi2 değişkeninden küçüktür. $sayi1<$sayi2";
+    }
+
+    if ($sayi1 >= $sayi2) {
+        echo "<br> \$sayi1 Değişkeni \$sayi2 değişkeninden büyüktür veya eşittir. $sayi1>=$sayi2";
+    } else {
+        echo "<br> \$sayi1 Değişkeni \$sayi2 değişkeninden küçüktür. $sayi1<$sayi2";
+    }
+
+
+
+    /* uygulama: 
+    1-Rasgele 0-100 arasında üretilen değerin tek veya çift olduğunu ekrana yazdırınız. 
+    2-Rasgele 0-100 arasında üretilen değerin 50'den küçük olduğu durumlarda kaldınız, büyükse geçtiniz yazdırınız.
+    3-Doğum yılına göre 18 yaşından büyük olanların ehliyet alabileceğini kontrol eden if bloğunu yazınız. */
+    ?>
+        
 </body>
 </html>

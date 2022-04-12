@@ -109,9 +109,33 @@
 
     echo "$bilgiler[Adi]  $bilgiler[Soyadi] hoşgeldiniz";
 
-    echo "<br><hr>";
-      
+    $kullanicilar = array(
+        "kullanici1" => array(
+            "id"    =>"0",
+            "adi"   =>"neslihan",
+            "soyadi"=>"gülmez",
+            "gsm"   =>"555 666 55 44",
+            "yas"   =>32
+        ),
+        "kullanici2" => array(
+            "id"   =>"1",
+            "adi"  =>"ahmet",
+            "soyadi"=>"keskin",
+            "gsm"  =>"555 666 44 55",
+            "yas"  => 32
+        )
+        );
 
+        echo "<pre>";
+        print_r($kullanicilar);
+        echo "</pre>";
+
+    echo "<br><hr>";
+    $tel = "+905313515946";
+    $telno = str_split($tel,3);
+    for ($i=0; $i < count($telno) ; $i++) { 
+        echo $telno[$i]." ";
+    }
     
     ?>
     
