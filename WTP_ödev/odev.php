@@ -43,9 +43,9 @@
         $yas= (2022 - $dgmyıl);
         $klnsure = ($dgmyıl - 2004);
         if ($yas >= 18) {
-            echo "Ehliyet alabilirsiniz <br> YAŞINIZ : $yas <br> DOĞUM YILINIZ : $dgmyıl";
+            echo "<b>Ehliyet alabilirsiniz</b> <br> YAŞINIZ : $yas <br> DOĞUM YILINIZ : $dgmyıl";
         }else {
-            echo "Ehliyet almazsınız <br>YAŞINIZ: $yas <br> DOĞUM YILINIZ: $dgmyıl<br>EHLİYET ALMANIZA KALAN SÜRE (YIL) : $klnsure ";
+            echo "<b>Ehliyet almazsınız</b> <br>YAŞINIZ: $yas <br> DOĞUM YILINIZ: $dgmyıl<br>EHLİYET ALMANIZA KALAN SÜRE (YIL) : $klnsure ";
         }
         echo "<br><hr>";
 
